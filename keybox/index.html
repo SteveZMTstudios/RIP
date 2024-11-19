@@ -52,7 +52,21 @@
 <body>
     <h1>所有泄露的Keybox均已被注销</h1>
     <div class="search-box">
-        <input type="text" id="search" placeholder="搜索指纹">
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const userLang = navigator.language || navigator.userLanguage;
+                const title = document.querySelector('title');
+                const heading = document.querySelector('h1');
+                if (userLang.startsWith('zh')) {
+                    title.textContent = 'Keybox 永远怀念';
+                    heading.textContent = '所有泄露的Keybox均已被注销';
+                } else {
+                    title.textContent = 'Keybox Forever Remembered';
+                    heading.textContent = 'All leaked Keyboxes have been revoked';
+                }
+            });
+        </script>
+        <input type="text" id="search" placeholder="Search Fingerprint...">
     </div>
     <div class="keybox-container" id="keybox-container">
         <div class="keybox">6681152659205225093</div>
@@ -525,7 +539,7 @@
         <!-- 可以添加更多的keybox指纹 -->
     </div>
     <audio controls>
-        <source src="/static/bg_sound/compress.m4a" type="audio/mpeg">
+        <source src="your-audio-file.mp3" type="audio/mpeg">
         您的浏览器不支持音频播放。
     </audio>
 
